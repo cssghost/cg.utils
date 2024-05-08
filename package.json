@@ -1,11 +1,16 @@
 {
-  "name": "cg.utils",
+  "name": "@cg/utils",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": "cssghost",
+  "description": "常用工具函数",
   "type": "module",
   "files": [
     "dist",
     "index.d.ts"
+  ],
+  "keywords": [
+    "utils"
   ],
   "main": "./dist/counter.umd.cjs",
   "module": "./dist/counter.js",
@@ -17,10 +22,14 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "test": "vitest --ui"
   },
   "devDependencies": {
+    "@types/node": "^20.12.10",
+    "@vitest/ui": "^1.6.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10"
+    "vite": "^5.2.10",
+    "vitest": "^1.6.0"
   }
 }
