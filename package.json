@@ -1,7 +1,7 @@
 {
-  "name": "@cg/utils",
-  "private": true,
-  "version": "0.1.0",
+  "name": "@chaosghost/utils",
+  "private": false,
+  "version": "0.0.0",
   "author": "cssghost",
   "description": "常用工具函数",
   "type": "module",
@@ -31,5 +31,9 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vitest": "^1.6.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
