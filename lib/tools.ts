@@ -9,8 +9,6 @@ export function isEmpty (value: any): boolean {
     return true
   }
 
-  console.log('🚀 ~ isEmpty ~ isObject(value):', isObject(value))
-  console.log('🚀 ~ isEmpty ~ Object.keys(value).length:', isObject(value) && Object.keys(value).length)
   if (isObject(value) && !Object.keys(value).length) {
     return true
   }
@@ -103,4 +101,38 @@ export function isDeepEqual (value: any, contrast: any) {
   }
 
   return isEqual(value, contrast)
+}
+
+/**
+ * 节流函数
+ */
+export function throttle (fn: Function, delay: number) {
+  let timer: any = null
+  return function (...args: any[]) {
+    if (timer) {
+      return
+    }
+
+    timer = setTimeout(() => {
+      fn.apply(this, args)
+      timer = null
+    }, delay)
+  }
+}
+
+/**
+ * 防抖函数
+ */
+export function debounce (fn: Function, delay: number) {
+  let timer: any = null
+  return function (...args: any[]) {
+    if (timer) {
+      clearTimeout(timer)
+    }
+
+    timer = setTimeout(() => {
+      fn.apply(this, args)
+      timer = null
+    }, delay)
+  }
 }
